@@ -1,5 +1,5 @@
 interface ShowDataProps {
-  data: any[];
+  data: ProductType[];
 }
 
 export function ShowData({ data }: ShowDataProps) {
