@@ -1,0 +1,53 @@
+@use '../../styles/variables';
+@use '../../styles/typography';
+
+.button {
+  &--primary {
+    padding: 10px 15px;
+    transition: .4s;
+    @include typography.sub-title;
+
+    color: variables.$white-100;
+    background-color: variables.$primary-color-100;
+
+    &:hover {
+      cursor: pointer;
+      background-color: variables.$primary-color-200;
+    }
+  }
+
+  &--secondary {
+    padding: 8px 13px;
+    transition: .4s;
+    @include typography.sub-title;
+
+    color: variables.$black-200;
+    background-color: transparent;
+    border: 2px solid variables.$black-200;
+
+    &:hover {
+      cursor: pointer;
+      color: variables.$white-100;
+      background-color: variables.$black-200;
+    }
+  }
+
+  &--tertiary {
+    padding: 10px 15px;
+    transition: .2s;
+    @include typography.sub-title;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    color: variables.$black-100;
+    background-color: transparent;
+
+    &:hover {
+      cursor: pointer;
+      color: variables.$primary-color-100;
+    }
+  }
+}
