@@ -1,0 +1,7 @@
+@use '../../styles/variables';
+@use '../../styles/typography';
+
+.data {
+  color: variables.$primary-color-100;
+  @include typography.overline;
+}

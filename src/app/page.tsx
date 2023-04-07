@@ -1,4 +1,4 @@
-import { ShowData } from "./ShowData";
+import { ShowData } from "./components/ShowData";
 import { getData } from "./api/data/getData";
 
 export default async function Home() {
