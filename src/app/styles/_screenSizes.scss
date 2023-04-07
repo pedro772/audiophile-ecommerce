@@ -1,0 +1,17 @@
+// Tablets
+$screen-md-min: 768px;
+
+// Desktops
+$screen-lg-min: 1200px;
+
+@mixin md {
+  @media (min-width: #{$screen-md-min}) {
+      @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: #{$screen-lg-min}) {
+      @content;
+  }
+}
