@@ -6,22 +6,48 @@
   position: fixed;
   top: 0;
   width: 100%;
+  height: 90px;
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 
-  background-color: variables.$black-100;
+  background-color: variables.$black-200;
 
-  height: 90px;
-  padding-inline: 6.4vw;
+  border-bottom: 1px solid variables.$gray-400;
 
   @include screenSizes.md {
-    padding-inline: 5vw;
+    border-bottom: none;
   }
 
   @include screenSizes.lg {
-    padding-inline: 11vw;
+    border-bottom: none;
+  }
+
+  &--homepage {
+    @extend .navbar;
+    background-color: transparent;
+  }
+
+  &__options-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 100%;
+
+    margin-inline: 6.4vw;
+
+    @include screenSizes.md {
+      margin-inline: 5vw;
+      border-bottom: 1px solid variables.$gray-400;
+    }
+
+    @include screenSizes.lg {
+      margin-inline: 11vw;
+      border-bottom: 1px solid variables.$gray-400;
+    }
   }
 }
 
