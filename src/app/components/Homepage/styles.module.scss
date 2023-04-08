@@ -1,0 +1,96 @@
+@use '../../styles/typography';
+@use '../../styles/screenSizes';
+@use '../../styles/variables';
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-size: 100% 100%;
+  background-image: url('../../../../public/assets/home/mobile/image-header.jpg');
+
+  @include screenSizes.md {
+    background-image: url('../../../../public/assets/home/tablet/image-header.jpg');
+  }
+
+  @include screenSizes.lg {
+    justify-content: flex-start;
+    background-image: url('../../../../public/assets/home/desktop/image-hero.jpg');
+  }
+
+  background-color: variables.$black-300;
+}
+
+.header__new-product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include screenSizes.lg {
+    align-items: flex-start;
+    margin-inline: 11vw;
+  }
+}
+
+.header__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-bottom: 28px;
+
+  &--overline {
+    color: variables.$gray-300;
+    @include typography.overline;
+  };
+
+  &--paragraph {
+    text-align: center;
+    max-width: 330px;
+    color: variables.$gray-300;
+    @include typography.paragraph;
+  };
+
+  &--title {
+    text-align: center;
+    max-width: 330px;
+    color: variables.$white-100;
+    @include typography.header-3;
+    margin: 16px 0 24px;
+  }
+
+  @include screenSizes.md {
+    margin-bottom: 40px;
+
+    &--paragraph {
+      max-width: 350px;
+    };
+
+    &--title {
+      max-width: 380px;
+      margin: 24px 0 24px;
+      @include typography.header-1;
+    }
+  }
+
+  @include screenSizes.lg {
+    align-items: flex-start;
+    margin-bottom: 40px;
+
+    &--paragraph {
+      text-align: start;
+      max-width: 350px;
+    };
+
+    &--title {
+      text-align: start;
+      max-width: 390px;
+      margin: 24px 0 24px;
+      @include typography.header-1;
+    }
+  }
+}
