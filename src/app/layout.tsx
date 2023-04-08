@@ -1,5 +1,4 @@
 import { Manrope } from "next/font/google";
-import { Navbar } from "./components/Navbar";
 
 import "./styles/reset.scss";
 
@@ -24,10 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       {/* margin-top to offset navbar */}
-      <body className={manrope.className} style={{ marginTop: "90px" }}>
-        <Navbar />
-        {children}
-      </body>
+      <body className={manrope.className}>{children}</body>
     </html>
   );
 }
