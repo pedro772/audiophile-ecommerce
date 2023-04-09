@@ -5,7 +5,6 @@ import "./styles/reset.scss";
 export const metadata = {
   title: "Audiophile E-Commerce",
   description: "Multi-page ecommerce website",
-  icons: "/assets/favicon-32x32.png",
 };
 
 const manrope = Manrope({
