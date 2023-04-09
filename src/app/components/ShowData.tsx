@@ -1,3 +1,4 @@
+import Image from "next/image";
 import MainButton from "./Buttons/MainButton";
 import TertiaryButton from "./Buttons/TertiaryButton";
 import styles from "./styles.module.scss";
@@ -16,7 +17,8 @@ export function ShowData({ data }: ShowDataProps) {
         iconAlt="Arrow Right"
         name="Shop"
       />
-      {data[0].name}
+      <Image src={data[0].image.mobile} alt="image" width={40} height={40} />
+      {data[0].image.mobile}
     </div>
   );
 }
