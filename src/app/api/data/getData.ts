@@ -2,7 +2,7 @@ const baseUrl = process.env.API_URL as string;
 
 export async function getData(): Promise<ProductType[]> {
   const res = await fetch(
-    baseUrl
+    baseUrl, {cache: 'no-cache'}
   );
 
   if (!res.ok) {
