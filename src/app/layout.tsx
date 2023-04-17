@@ -1,6 +1,7 @@
 import { Manrope } from "next/font/google";
 
 import "./styles/reset.scss";
+import { Footer } from "./components/Footer";
 
 export const metadata = {
   title: "Audiophile E-Commerce",
@@ -22,7 +23,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       {/* margin-top to offset navbar */}
-      <body className={manrope.className}>{children}</body>
+      <body className={manrope.className} style={{ maxWidth: "100vw" }}>
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

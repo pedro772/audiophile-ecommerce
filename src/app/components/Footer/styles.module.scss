@@ -1,0 +1,129 @@
+@use '../../styles/typography';
+@use '../../styles/screenSizes';
+@use '../../styles/variables';
+
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: fit-content;
+  background-color: variables.$black-100;
+  padding: 48px 25px 40px;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 48px;
+
+    @include screenSizes.md {
+      display: grid;
+      grid-template-areas: 
+      "a a"
+      "b b"
+      "c c"
+      "d e";
+      row-gap: 32px;
+    }
+
+    @include screenSizes.lg {
+      display: grid;
+      grid-template-areas: 
+      "a b"
+      "c e"
+      "d ."
+    }
+  }
+
+  &__logo {
+    grid-area: a;
+  }
+
+  &__pages {
+    grid-area: b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+
+    @include screenSizes.md {
+      flex-direction: row;
+      gap: 32px;
+    }
+  }
+
+  &__description {
+    grid-area: c;
+    text-align: center;
+    @include typography.paragraph;
+    color: variables.$gray-400;
+
+    @include screenSizes.md {
+      text-align: start;
+    }
+  }
+
+  &__copyright {
+    grid-area: d;
+    text-align: center;
+    @include typography.paragraph;
+    color: variables.$gray-400;
+    font-weight: bold;
+
+    @include screenSizes.md {
+      text-align: start;
+    }
+  }
+
+  &__socials {
+    grid-area: e;
+    display: flex;
+    gap: 16px;
+
+    @include screenSizes.md {
+      justify-content: end;
+    }
+
+    @include screenSizes.lg {
+      align-self: end;
+    }
+  }
+
+  &::before, &::after {
+    position: absolute;
+    content: '';
+    width: 100px;
+    height: 4px;
+    top: 0;
+    left: calc(50% - 50px);
+    background-color: variables.$primary-color-100;
+
+    @include screenSizes.md {
+      left: 40px;
+    }
+
+    @include screenSizes.lg {
+      left: 165px;
+    }
+  }
+
+  @include screenSizes.md {
+    padding: 56px 40px 48px;
+  }
+
+  @include screenSizes.lg {
+    padding: 72px 165px 48px;
+  }
+}
+
+.button__link {
+  @include typography.sub-title;
+  color: variables.$white-100;
+
+  transition: .2s;
+
+  &:hover {
+    color: variables.$primary-color-100;
+  }
+}
+
