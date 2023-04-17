@@ -7,7 +7,6 @@ export default async function Home() {
 
   return (
     <>
-      <ShowData data={data} />
       <Homepage />
     </>
   );
