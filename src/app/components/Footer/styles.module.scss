@@ -28,6 +28,7 @@
 
     @include screenSizes.lg {
       display: grid;
+      row-gap: 0;
       grid-template-areas: 
       "a b"
       "c e"
@@ -61,6 +62,10 @@
     @include screenSizes.md {
       text-align: start;
     }
+
+    @include screenSizes.lg {
+      margin-top: 36px;
+    }
   }
 
   &__copyright {
@@ -72,6 +77,10 @@
 
     @include screenSizes.md {
       text-align: start;
+    }
+
+    @include screenSizes.lg {
+      margin-top: 56px;
     }
   }
 
