@@ -95,3 +95,15 @@
     }
   }
 }
+
+.container {
+  margin: 40px 6.4vw 120px;
+
+  @include screenSizes.md {
+    margin: 96px 5vw;
+  }
+
+  @include screenSizes.lg {
+    margin: 120px 11vw 168px;
+  }
+}

@@ -1,0 +1,127 @@
+@use '../../styles/typography';
+@use '../../styles/screenSizes';
+@use '../../styles/variables';
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  @include screenSizes.md {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  @include screenSizes.lg {
+    gap: 30px;
+  }
+}
+
+.category {
+  width: 100%;
+
+  &__container {
+    position: relative;
+    width: 100%;
+    height: 217px;
+
+    display: flex;
+    justify-content: center;
+  
+    @include screenSizes.lg {
+      height: 284px;
+    }
+  }
+
+  &__headphones {
+    position: relative;
+    top: 27px;
+    z-index: 2;
+    background-image: url('../../../../public/assets/shared/desktop/image-category-thumbnail-headphones.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    height: 104px;
+    width: 80px;
+
+    @include screenSizes.lg {
+      top: 40px;
+      height: 160px;
+      width: 123px;
+    }
+  }
+
+  &__speakers {
+    position: relative;
+    top: 29px;
+    z-index: 2;
+    background-image: url('../../../../public/assets/shared/desktop/image-category-thumbnail-speakers.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    height: 101px;
+    width: 84px;
+
+    @include screenSizes.lg {
+      top: 44px;
+      height: 146px;
+      width: 121px;
+    }
+  }
+
+  &__earphones {
+    position: relative;
+    top: 27px;
+    z-index: 2;
+    background-image: url('../../../../public/assets/shared/desktop/image-category-thumbnail-earphones.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    height: 104px;
+    width: 103px;
+
+    @include screenSizes.lg {
+      top: 48px;
+      height: 126px;
+      width: 125px;
+    }
+  }
+
+  &__name {
+    color: variables.$black-200;
+    font-weight: 700;
+    font-size: 0.9375em;
+    letter-spacing: 1.07px;
+    line-height: normal;
+    text-transform: uppercase;
+
+    @include screenSizes.lg {
+      @include typography.header-6;
+    }
+  }
+
+  &__card {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    border-radius: 8px;
+    height: 165px;
+    background-color: variables.$gray-100;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 15px;
+
+    @include screenSizes.lg {
+      height: 204px;
+      bottom: 0;
+    }
+  }
+
+  &:hover button {
+    color: variables.$primary-color-100;
+  }
+}
