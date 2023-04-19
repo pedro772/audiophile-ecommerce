@@ -1,0 +1,92 @@
+@use '../../styles/typography';
+@use '../../styles/screenSizes';
+@use '../../styles/variables';
+
+.zx9 {
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+
+  width: 100%;
+  height: 600px;
+  background-color: variables.$primary-color-100;
+
+  &__image {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: 3;
+
+      top: 55px;
+      left: calc(43.6vw - 86px);
+
+      width: 172px;
+      height: 207px;
+  
+      background-image: url('../../../../public/assets/home/mobile/image-speaker-zx9.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+
+  &__background {
+    position: relative;
+    z-index: 2;
+
+    &::before {
+      content: "";
+      position: absolute;
+
+      width: 558px;
+      height: 558px;
+
+      top: -119px;
+      left: calc((558px - (87.2vw)) / -2);
+
+      background-image: url('../../../../public/assets/home/desktop/pattern-circles.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+
+  &__info {
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 24px;
+
+    margin: 0 20px 54px;
+  }
+
+  &__header {
+    width: 200px;
+    @include typography.header-3;
+    font-size: 2.25em;
+    line-height: 40px;
+    letter-spacing: 1.29px;
+    color: variables.$white-100;
+    text-align: center;
+  }
+
+  &__description {
+    @include typography.paragraph;
+    color: variables.$white-100;
+    text-align: center;
+  }
+
+  button {
+    background-color: variables.$black-200;
+    color: variables.$white-100;
+  }
+
+  &:hover {
+    button {
+      background-color: variables.$gray-500;
+      border-color: variables.$gray-500;
+    }
+  }
+}

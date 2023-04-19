@@ -2,6 +2,7 @@ import styles from "./styles.module.scss";
 import MainButton from "../Buttons/MainButton";
 import { Navbar } from "../Navbar";
 import { Categories } from "../Categories";
+import { HomeProducts } from "../HomeProducts";
 
 export function Homepage() {
   return (
@@ -30,6 +31,10 @@ export function Homepage() {
         <div className={styles.container}>
           <section>
             <Categories />
+          </section>
+
+          <section>
+            <HomeProducts />
           </section>
         </div>
       </main>
