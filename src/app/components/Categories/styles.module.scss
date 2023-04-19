@@ -35,55 +35,53 @@
 
   &__headphones {
     position: relative;
-    top: 27px;
     z-index: 2;
     background-image: url('../../../../public/assets/shared/desktop/image-category-thumbnail-headphones.png');
     background-repeat: no-repeat;
     background-size: contain;
 
-    height: 104px;
-    width: 80px;
+    width: 146px;
+    height: 140px;
 
     @include screenSizes.lg {
-      top: 40px;
-      height: 160px;
-      width: 123px;
+      width: 219px;
+      height: 211px;
     }
   }
 
   &__speakers {
     position: relative;
-    top: 29px;
+    top: 4px;
     z-index: 2;
     background-image: url('../../../../public/assets/shared/desktop/image-category-thumbnail-speakers.png');
     background-repeat: no-repeat;
     background-size: contain;
 
-    height: 101px;
-    width: 84px;
+    width: 146px;
+    height: 136px;
 
     @include screenSizes.lg {
-      top: 44px;
-      height: 146px;
-      width: 121px;
+      top: 7px;
+      width: 219px;
+      height: 204px;
     }
   }
 
   &__earphones {
     position: relative;
-    top: 27px;
+    top: 20px;
     z-index: 2;
     background-image: url('../../../../public/assets/shared/desktop/image-category-thumbnail-earphones.png');
     background-repeat: no-repeat;
     background-size: contain;
 
-    height: 104px;
-    width: 103px;
+    width: 146px;
+    height: 120px;
 
     @include screenSizes.lg {
-      top: 48px;
-      height: 126px;
-      width: 125px;
+      top: 31px;
+      width: 219px;
+      height: 180px;
     }
   }
 
