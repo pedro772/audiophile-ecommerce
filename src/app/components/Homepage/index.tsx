@@ -3,6 +3,7 @@ import MainButton from "../Buttons/MainButton";
 import { Navbar } from "../Navbar";
 import { Categories } from "../Categories";
 import { HomeProducts } from "../HomeProducts";
+import { AboutUs } from "../AboutUs";
 
 export function Homepage() {
   return (
@@ -36,6 +37,8 @@ export function Homepage() {
           <section>
             <HomeProducts />
           </section>
+
+          <AboutUs />
         </div>
       </main>
     </>
