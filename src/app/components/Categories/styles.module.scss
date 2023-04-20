@@ -40,6 +40,8 @@
     background-repeat: no-repeat;
     background-size: contain;
 
+    transition: 0.4s;
+
     width: 146px;
     height: 140px;
 
@@ -56,6 +58,8 @@
     background-image: url('../../../../public/assets/shared/desktop/image-category-thumbnail-speakers.png');
     background-repeat: no-repeat;
     background-size: contain;
+
+    transition: 0.4s;
 
     width: 146px;
     height: 136px;
@@ -74,6 +78,8 @@
     background-image: url('../../../../public/assets/shared/desktop/image-category-thumbnail-earphones.png');
     background-repeat: no-repeat;
     background-size: contain;
+
+    transition: 0.4s;
 
     width: 146px;
     height: 120px;
@@ -117,6 +123,10 @@
       height: 204px;
       bottom: 0;
     }
+  }
+
+  &:hover &__headphones, &:hover &__earphones, &:hover &__speakers {
+    transform: scale(1.05);
   }
 
   &:hover button {
