@@ -1,0 +1,164 @@
+@use '../../styles/typography';
+@use '../../styles/screenSizes';
+@use '../../styles/variables';
+
+.zx9 {
+  border-radius: 8px;
+  overflow: hidden;
+
+  width: 100%;
+  height: 600px;
+  background-color: variables.$primary-color-100;
+
+  padding-bottom: 56px;
+
+  @include screenSizes.md {
+    height: 720px;
+    padding-bottom: 64px;
+  }
+
+  @include screenSizes.lg {
+    height: 560px;
+    padding-bottom: 124px;
+  }
+
+  &__image {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: 3;
+
+      top: 55px;
+      // half of screen - margin inline - half of width
+      left: calc(50vw - 6.4vw - 86px);
+
+      width: 172px;
+      height: 207px;
+  
+      background-image: url('../../../../public/assets/home/mobile/image-speaker-zx9.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      @include screenSizes.md {
+        background-image: url('../../../../public/assets/home/tablet/image-speaker-zx9.png');
+        width: 197px;
+        height: 237px;
+
+        top: 55px;
+        // half of screen - margin inline - half of width
+        left: calc((50vw - 5vw - 98.5px));
+      }
+
+      @include screenSizes.lg {
+        background-image: url('../../../../public/assets/home/desktop/image-speaker-zx9.png');
+        width: 410px;
+        height: 493px;
+
+        top: 85px;
+        left: 120px;
+      }
+    }
+  }
+
+  &__background {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: 2;
+
+      width: 558px;
+      height: 558px;
+
+      top: -119px;
+      // width - screen width - margin inline
+      left: calc((558px - (100vw - 12.8vw)) / -2);
+
+      background-image: url('../../../../public/assets/home/desktop/pattern-circles.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      @include screenSizes.md {
+        width: 944px;
+        height: 944px;
+
+        top: -269px;
+        // width - screen width - margin inline
+        left: calc((944px - (100vw - 10vw)) / -2);
+      }
+
+      @include screenSizes.lg {
+        top: -36px;
+        left: -150px;
+      }
+    }
+  }
+
+  &__info {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-self: baseline;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 24px;
+
+    margin-bottom: 56px;
+
+    @include screenSizes.lg {
+      align-items: flex-start;
+      margin-left: calc(50% + 110px);
+    }
+  }
+
+  &__header {
+    max-width: 200px;
+    @include typography.header-3;
+    font-size: 2.25em;
+    line-height: 40px;
+    letter-spacing: 1.29px;
+    color: variables.$white-100;
+    text-align: center;
+
+    @include screenSizes.md {
+      max-width: 260px;
+      @include typography.header-1;
+    }
+
+    @include screenSizes.lg {
+      text-align: start;
+    }
+  }
+
+  &__description {
+    @include typography.paragraph;
+    max-width: 280px;
+    color: variables.$white-100;
+    text-align: center;
+
+    @include screenSizes.md {
+      max-width: 350px;
+    }
+
+    @include screenSizes.lg {
+      text-align: start;
+    }
+  }
+
+  button {
+    background-color: variables.$black-200;
+    color: variables.$white-100;
+
+    &:hover {
+      background-color: variables.$gray-500;
+      border-color: variables.$gray-500;
+    }
+  }
+}
