@@ -6,7 +6,7 @@ import styles from "./styles.module.scss";
 export function HomeProducts() {
   return (
     <div style={{ marginTop: "120px" }}>
-      <Link href="/" className={styles.zx9}>
+      <div className={styles.zx9}>
         <div className={styles.zx9__image} />
         <div className={styles.zx9__background} />
         <div className={styles.zx9__info}>
@@ -17,7 +17,7 @@ export function HomeProducts() {
           </p>
           <MainButton link="/" name="See product" type="secondary" />
         </div>
-      </Link>
+      </div>
     </div>
   );
 }
