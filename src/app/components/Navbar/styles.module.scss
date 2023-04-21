@@ -14,7 +14,7 @@
 
   background-color: variables.$black-200;
 
-  border-bottom: 1px solid variables.$gray-400;
+  border-bottom: 1px solid variables.$gray-600;
 
   @include screenSizes.md {
     border-bottom: none;
@@ -41,12 +41,12 @@
 
     @include screenSizes.md {
       margin-inline: 5vw;
-      border-bottom: 1px solid variables.$gray-400;
+      border-bottom: 1px solid variables.$gray-600;
     }
 
     @include screenSizes.lg {
       margin-inline: 11vw;
-      border-bottom: 1px solid variables.$gray-400;
+      border-bottom: 1px solid variables.$gray-600;
     }
   }
 }
