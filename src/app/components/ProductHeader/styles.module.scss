@@ -1,0 +1,35 @@
+@use '../../styles/variables';
+@use '../../styles/typography';
+@use '../../styles/screenSizes';
+
+.header {
+  position: relative;
+  top: 0;
+  left: -6.4vw;
+  width: calc(100% + 12.8vw);
+  height: 90px;
+  margin-bottom: 64px;
+
+  @include screenSizes.md {
+    left: -5vw;
+    width: calc(100% + 10vw);
+    margin-bottom: 120px;
+  }
+
+  @include screenSizes.lg {
+    left: -11vw;
+    width: calc(100% + 22vw);
+    margin-bottom: 160px;
+  }
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: variables.$black-200;
+
+  &__title {
+    @include typography.header-4;
+    color: variables.$white-100;
+  }
+}
