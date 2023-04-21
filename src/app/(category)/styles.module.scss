@@ -1,0 +1,15 @@
+@use '../styles/typography';
+@use '../styles/screenSizes';
+@use '../styles/variables';
+
+.container {
+  margin: 0 6.4vw 120px;
+
+  @include screenSizes.md {
+    margin: 0 5vw 96px;
+  }
+
+  @include screenSizes.lg {
+    margin: 0 11vw 200px;
+  }
+}
