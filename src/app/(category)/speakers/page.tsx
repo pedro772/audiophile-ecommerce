@@ -1,12 +1,12 @@
 import { getData } from "@/app/api/data/getData";
-import { ProductHeader } from "@/app/components/ProductHeader";
+import { CategoryHeader } from "@/app/components/CategoryHeader";
 
 export default async function Speakers() {
   const data = await getData();
 
   return (
     <>
-      <ProductHeader title="SPEAKERS" />
+      <CategoryHeader title="SPEAKERS" />
     </>
   );
 }
