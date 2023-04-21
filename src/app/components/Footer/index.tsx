@@ -19,13 +19,13 @@ export function Footer() {
           <Link href="/" className={styles.button__link}>
             Home
           </Link>
-          <Link href="/" className={styles.button__link}>
+          <Link href="/headphones" className={styles.button__link}>
             Headphones
           </Link>
-          <Link href="/" className={styles.button__link}>
+          <Link href="/speakers" className={styles.button__link}>
             Speakers
           </Link>
-          <Link href="/" className={styles.button__link}>
+          <Link href="/earphones" className={styles.button__link}>
             Earphones
           </Link>
         </div>

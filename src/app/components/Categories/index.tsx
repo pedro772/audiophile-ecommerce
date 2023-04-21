@@ -7,7 +7,7 @@ import TertiaryButton from "../Buttons/TertiaryButton";
 export function Categories() {
   return (
     <nav className={styles.categories}>
-      <Link href="/" className={styles.category}>
+      <Link href="/headphones" className={styles.category}>
         <div className={styles.category__container}>
           <div className={styles.category__headphones} />
           <div className={styles.category__card}>
@@ -20,7 +20,7 @@ export function Categories() {
           </div>
         </div>
       </Link>
-      <Link href="/" className={styles.category}>
+      <Link href="/speakers" className={styles.category}>
         <div className={styles.category__container}>
           <div className={styles.category__speakers} />
           <div className={styles.category__card}>
@@ -33,7 +33,7 @@ export function Categories() {
           </div>
         </div>
       </Link>
-      <Link href="/" className={styles.category}>
+      <Link href="/earphones" className={styles.category}>
         <div className={styles.category__container}>
           <div className={styles.category__earphones} />
           <div className={styles.category__card}>
