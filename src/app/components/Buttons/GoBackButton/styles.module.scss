@@ -1,0 +1,25 @@
+@use '../../../styles/typography';
+@use '../../../styles/screenSizes';
+@use '../../../styles/variables';
+
+.back {
+  margin-top: 16px;
+
+  @include typography.paragraph;
+  color: variables.$gray-400;
+
+  @include screenSizes.md {
+    margin-top: 32px;
+  }
+
+  @include screenSizes.lg {
+    margin-top: 80px;
+  }
+
+  transition: 0.4s;
+
+  &:hover {
+    cursor: pointer;
+    color: variables.$primary-color-100;
+  }
+}
