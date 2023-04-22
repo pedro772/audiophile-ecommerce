@@ -1,0 +1,358 @@
+@use '../../styles/typography';
+@use '../../styles/screenSizes';
+@use '../../styles/variables';
+
+.product {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include screenSizes.lg {
+    margin-top: 56px;
+  }
+
+  &__header {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    margin-bottom: 88px;
+
+    @include screenSizes.md {
+      flex-direction: row;
+      align-items: center;
+      gap: 69px;
+      margin-bottom: 120px;
+    }
+
+    @include screenSizes.lg {
+      gap: 125px;
+      margin-bottom: 160px;
+    }
+  }
+
+  &__image {
+    position: relative;
+    width: 100%;
+    height: 87.2vw;
+    margin-bottom: 32px;
+
+    @include screenSizes.md {
+      height: 62.5vw;
+      margin-bottom: 0;
+    }
+
+    @include screenSizes.lg {
+      height: 38.9vw;
+    }
+  }
+
+  &__info {
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__launch {
+    @include typography.overline;
+    color: variables.$primary-color-100;
+
+    margin-bottom: 24px;
+
+    @include screenSizes.md {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__name {
+    @include typography.header-4;
+    color: variables.$black-100;
+
+    margin-bottom: 24px;
+
+    @include screenSizes.md {
+      @include typography.header-2;
+      max-width: 500px;
+      margin-bottom: 32px;
+    }
+
+    @include screenSizes.lg {
+      max-width: 445px;
+    }
+  }
+
+  &__description {
+    @include typography.paragraph;
+    color: variables.$gray-400;
+
+    margin-bottom: 24px;
+
+    @include screenSizes.md {
+      max-width: 570px;
+    }
+
+    @include screenSizes.lg {
+      margin-bottom: 40px;
+      max-width: 445px;
+    }
+  }
+
+  &__price {
+    @include typography.header-6;
+    margin-bottom: 32px;
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    gap: 88px;
+
+    @include screenSizes.md {
+      gap: 120px;
+    }
+
+    @include screenSizes.lg {
+      flex-direction: row;
+      gap: 125px;
+    }
+  }
+
+  &__features {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @include screenSizes.md {
+      gap: 32px;
+    }
+
+    @include screenSizes.lg {
+      width: calc(60% - 62.5px);
+    }
+
+    &--header {
+      @include typography.header-5;
+
+      @include screenSizes.md {
+        @include typography.header-3;
+      }
+    }
+
+    &--description {
+      @include typography.paragraph;
+      color: variables.$gray-400;
+    }
+  }
+
+  &__gallery {
+    margin-top: 88px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include screenSizes.md {
+      margin-top: 120px;
+
+      display: grid;
+      grid-template-areas: 
+      "a c"
+      "b c";
+      row-gap: 2.6vw;
+      column-gap: 2.3vw;
+    }
+
+    @include screenSizes.lg {
+      margin-top: 160px;
+
+      row-gap: 2.2vw;
+      column-gap: 2.1vw;
+    }
+
+    &--first {
+      grid-area: a;
+      position: relative;
+      width: 100%;
+      height: 46.4vw;
+
+      @include screenSizes.md {
+        width: 36.1vw;
+        height: 22.7vw;
+      }
+
+      @include screenSizes.lg {
+        width: 30.9vw;
+        height: 19.4vw;
+      }
+    }
+
+    &--second {
+      grid-area: b;
+      position: relative;
+      width: 100%;
+      height: 46.4vw;
+
+      @include screenSizes.md {
+        width: 36.1vw;
+        height: 22.7vw;
+      }
+
+      @include screenSizes.lg {
+        width: 30.9vw;
+        height: 19.4vw;
+      }
+    }
+
+    &--third {
+      grid-area: c;
+      position: relative;
+      width: 100%;
+      height: 98.1vw;
+
+      @include screenSizes.md {
+        width: 51.4vw;
+        height: 47.9vw;
+      }
+
+      @include screenSizes.lg {
+        width: 44.1vw;
+        height: 41.1vw;
+      }
+    }
+  }
+
+  &__related {
+    margin: 120px 0;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include screenSizes.lg {
+      margin: 160px 0;
+    }
+    
+    &--header {
+      @include typography.header-5;
+      margin-bottom: 40px;
+
+      @include screenSizes.md {
+        @include typography.header-3;
+        margin-bottom: 56px;
+      }
+
+      @include screenSizes.md {
+        margin-bottom: 64px;
+      }
+    }
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  @include screenSizes.md {
+    flex-direction: row;
+    gap: 11px;
+  }
+
+  @include screenSizes.lg {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  &__header {
+    @include typography.header-5;
+
+    @include screenSizes.md {
+      @include typography.header-3;
+      width: calc(50% - 5.5px);
+    }
+
+    @include screenSizes.lg {
+      width: 100%;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    @include typography.paragraph;
+
+    &--quantity {
+      width: 20px;
+      font-weight: bold;
+      color: variables.$primary-color-100;
+    }
+
+    &--name {
+      color: variables.$gray-400;
+    }
+  }
+}
+
+.related {
+  &__products {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+
+    @include screenSizes.md {
+      flex-direction: row;
+      gap: 11px;
+    }
+
+    @include screenSizes.lg {
+      gap: 30px;
+    }
+  }
+
+  &__product {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+
+    @include screenSizes.md {
+      gap: 40px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+
+  &__image {
+    position: relative;
+    width: 100%;
+    height: 32vw;
+
+    @include screenSizes.md {
+      height: 41.4vw;
+    }
+
+    @include screenSizes.lg {
+      height: 22.1vw;
+    }
+  }
+
+  &__name {
+    @include typography.header-5;
+  }
+}
