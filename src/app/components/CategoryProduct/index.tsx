@@ -12,6 +12,7 @@ interface CategoryProductProps {
   name: string;
   description: string;
   slug: string;
+  arrayPosition: number;
 }
 
 export function CategoryProduct({
@@ -20,14 +21,23 @@ export function CategoryProduct({
   name,
   description,
   slug,
+  arrayPosition,
 }: CategoryProductProps) {
   const { innerWidth } = useWindowSize();
   const responsiveImagePath = getResponsiveImagePath(imagePath, innerWidth);
-  console.log(responsiveImagePath);
   return (
-    <div className={styles.product}>
+    <div
+      className={
+        arrayPosition % 2 === 0 ? styles.product : styles["product--reverse"]
+      }
+    >
       <div className={styles.product__image}>
-        <Image src={responsiveImagePath} alt="Product Image" fill />
+        <Image
+          src={responsiveImagePath}
+          alt="Product Image"
+          fill
+          style={{ borderRadius: "8px" }}
+        />
       </div>
       <div className={styles.product__info}>
         {isNewProduct && (
