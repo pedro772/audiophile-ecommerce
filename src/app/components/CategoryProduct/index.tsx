@@ -45,7 +45,11 @@ export function CategoryProduct({
         )}
         <h2 className={styles.product__name}>{name}</h2>
         <p className={styles.product__description}>{description}</p>
-        <MainButton link={slug} type="primary" name="SEE PRODUCT" />
+        <MainButton
+          link={`product/${slug}`}
+          type="primary"
+          name="SEE PRODUCT"
+        />
       </div>
     </div>
   );

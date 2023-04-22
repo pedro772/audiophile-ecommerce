@@ -25,7 +25,11 @@ export function Homepage() {
               </p>
             </div>
 
-            <MainButton link="/" name="see product" type="primary" />
+            <MainButton
+              link="/product/xx99-mark-two-headphones"
+              name="see product"
+              type="primary"
+            />
           </div>
         </header>
 
