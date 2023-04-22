@@ -1,11 +1,13 @@
 "use client";
 
+import MainButton from "../Buttons/MainButton";
+import { InputQuantity } from "../InputQuantity";
 import Image from "next/image";
 import { useWindowSize } from "rooks";
 import { getResponsiveImagePath } from "@/utils/getResponsiveImagePath";
 
 import styles from "./styles.module.scss";
-import MainButton from "../Buttons/MainButton";
+import { useState } from "react";
 
 interface ProductProps {
   product: ProductType;
@@ -23,6 +25,22 @@ export function Product({ product }: ProductProps) {
     third: getResponsiveImagePath(product.gallery.third.mobile, innerWidth),
   };
   const productFeatures = product.features.split("\n");
+
+  const [quantity, setQuantity] = useState(1);
+
+  const handleSubtract = () => {
+    setQuantity((prevQuantity) => {
+      if (prevQuantity - 1 > 0) {
+        return prevQuantity - 1;
+      }
+
+      return prevQuantity;
+    });
+  };
+
+  const handleAdd = () => {
+    setQuantity((prevQuantity) => prevQuantity + 1);
+  };
 
   return (
     <div className={styles.product}>
@@ -42,8 +60,12 @@ export function Product({ product }: ProductProps) {
           <h2 className={styles.product__name}>{product.name}</h2>
           <p className={styles.product__description}>{product.description}</p>
           <span className={styles.product__price}>$ {product.price}</span>
-          <div>
-            <div></div>
+          <div className={styles["product__cart-info"]}>
+            <InputQuantity
+              quantity={quantity}
+              handleAdd={handleAdd}
+              handleSubtract={handleSubtract}
+            />
             <MainButton type="primary" name="ADD TO CART" />
           </div>
         </div>

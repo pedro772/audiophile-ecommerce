@@ -107,6 +107,11 @@
     margin-bottom: 32px;
   }
 
+  &__cart-info {
+    display: flex;
+    gap: 16px;
+  }
+
   &__details {
     display: flex;
     flex-direction: column;
