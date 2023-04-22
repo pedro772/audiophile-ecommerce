@@ -10,7 +10,7 @@ export const metadata = {
 
 const manrope = Manrope({
   subsets: ["latin"],
-  fallback: ["--font-family-sans"],
+  fallback: ["--font-family-serif"],
   weight: ["400", "500", "700"],
   display: "swap",
 });
