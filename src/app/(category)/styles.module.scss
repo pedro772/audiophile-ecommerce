@@ -13,3 +13,15 @@
     margin: 0 11vw 200px;
   }
 }
+
+.products {
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+  margin-bottom: 120px;
+
+  @include screenSizes.lg {
+    gap: 160px;
+    margin-bottom: 160px;
+  }
+}
