@@ -6,11 +6,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 120px;
 
   @include screenSizes.lg {
     flex-direction: row;
     gap: 125px;
+  }
+
+  &--reverse {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    @include screenSizes.lg {
+      flex-direction: row-reverse;
+      gap: 125px;
+    }
   }
 
   &__image {
@@ -68,7 +78,7 @@
 
     @include screenSizes.lg {
       text-align: start;
-      max-width: 430px;
+      max-width: 445px;
     }
   }
 
@@ -86,7 +96,7 @@
     @include screenSizes.lg {
       text-align: start;
       margin-bottom: 40px;
-      max-width: 430px;
+      max-width: 445px;
     }
   }
 }
