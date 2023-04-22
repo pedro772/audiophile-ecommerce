@@ -3,6 +3,7 @@ import { AboutUs } from "@/app/components/AboutUs";
 import { Categories } from "@/app/components/Categories";
 import { Navbar } from "@/app/components/Navbar";
 import { Product } from "@/app/components/Product";
+import { GoBackButton } from "@/app/components/Buttons/GoBackButton";
 
 import styles from "./styles.module.scss";
 
@@ -18,6 +19,7 @@ export default async function ProductPage({
     <>
       <Navbar />
       <main className={styles.container}>
+        <GoBackButton />
         <Product product={mainProduct} />
         <Categories />
         <AboutUs />
