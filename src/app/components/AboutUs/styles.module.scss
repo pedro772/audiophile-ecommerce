@@ -75,11 +75,10 @@
 
     @include screenSizes.md {
       @include typography.header-2;
-      max-width: 570px;
+      max-width: 75vw;
     }
 
     @include screenSizes.lg {
-      max-width: 445px;
       text-align: start;
     }
   }
@@ -90,11 +89,10 @@
     color: variables.$gray-400;
 
     @include screenSizes.md {
-      max-width: 570px
+      max-width: 75vw;
     }
 
     @include screenSizes.lg {
-      max-width: 445px;
       text-align: start;
     }
   }

@@ -51,6 +51,10 @@
       flex-direction: row;
       gap: 32px;
     }
+
+    @include screenSizes.lg {
+      justify-content: flex-end;
+    }
   }
 
   &__description {
@@ -65,6 +69,7 @@
 
     @include screenSizes.lg {
       margin-top: 36px;
+      max-width: 37.5vw;
     }
   }
 
