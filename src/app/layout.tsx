@@ -1,7 +1,8 @@
 import { Manrope } from "next/font/google";
+import { Footer } from "./components/Footer";
+import { CartContextProvider } from "./context/cart";
 
 import "./styles/reset.scss";
-import { Footer } from "./components/Footer";
 
 export const metadata = {
   title: "Audiophile E-Commerce",
@@ -24,7 +25,7 @@ export default function RootLayout({
     <html lang="en">
       {/* margin-top to offset navbar */}
       <body className={manrope.className} style={{ maxWidth: "100vw" }}>
-        {children}
+        <CartContextProvider>{children}</CartContextProvider>
         <Footer />
       </body>
     </html>
