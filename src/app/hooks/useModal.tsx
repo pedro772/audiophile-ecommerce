@@ -5,9 +5,11 @@ export function useModal() {
   const [modalContent, setModalContent] = useState();
 
   const handleModal = (content: any = false) => {
-    setShowModal(!showModal);
     if (content) {
+      setShowModal((prevShowModal) => !prevShowModal);
       setModalContent(content);
+    } else {
+      setShowModal(false);
     }
   };
 
