@@ -3,6 +3,7 @@ import { Footer } from "./components/Footer";
 import { CartContextProvider } from "./context/cart";
 
 import "./styles/reset.scss";
+import { ModalContextProvider } from "./context/modal";
 
 export const metadata = {
   title: "Audiophile E-Commerce",
@@ -25,7 +26,9 @@ export default function RootLayout({
     <html lang="en">
       {/* margin-top to offset navbar */}
       <body className={manrope.className} style={{ maxWidth: "100vw" }}>
-        <CartContextProvider>{children}</CartContextProvider>
+        <CartContextProvider>
+          <ModalContextProvider>{children}</ModalContextProvider>
+        </CartContextProvider>
         <Footer />
       </body>
     </html>
