@@ -8,6 +8,7 @@ import { getResponsiveImagePath } from "@/utils/getResponsiveImagePath";
 
 import styles from "./styles.module.scss";
 import { useState } from "react";
+import { useCartContext } from "@/app/context/cart";
 
 interface ProductProps {
   product: ProductType;
@@ -27,6 +28,32 @@ export function Product({ product }: ProductProps) {
   const productFeatures = product.features.split("\n");
 
   const [quantity, setQuantity] = useState(1);
+
+  const { itemsInCart, setItemsInCart } = useCartContext();
+
+  const handleAddProductToCart = () => {
+    setItemsInCart((prevItemsInCart) => {
+      if (prevItemsInCart.some((item) => item.product.id === product.id)) {
+        const updatedItems = prevItemsInCart.map((item) => {
+          if (item.product.id === product.id) {
+            item.quantity += quantity;
+          }
+
+          return item;
+        });
+
+        return updatedItems;
+      }
+
+      return [
+        ...prevItemsInCart,
+        {
+          product: product,
+          quantity: quantity,
+        },
+      ];
+    });
+  };
 
   const handleSubtract = () => {
     setQuantity((prevQuantity) => {
@@ -66,7 +93,11 @@ export function Product({ product }: ProductProps) {
               handleAdd={handleAdd}
               handleSubtract={handleSubtract}
             />
-            <MainButton type="primary" name="ADD TO CART" />
+            <MainButton
+              handleClick={handleAddProductToCart}
+              type="primary"
+              name="ADD TO CART"
+            />
           </div>
         </div>
       </header>
