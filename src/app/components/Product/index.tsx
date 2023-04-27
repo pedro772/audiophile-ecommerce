@@ -1,14 +1,18 @@
 "use client";
 
+import { useState } from "react";
+import { useWindowSize } from "rooks";
+import Image from "next/image";
+
 import MainButton from "../Buttons/MainButton";
 import { InputQuantity } from "../InputQuantity";
-import Image from "next/image";
-import { useWindowSize } from "rooks";
+import { CartModal } from "../Modals/CartModal";
+
+import { useCartContext } from "@/app/context/cart";
+import { useModalContext } from "@/app/context/modal";
 import { getResponsiveImagePath } from "@/utils/getResponsiveImagePath";
 
 import styles from "./styles.module.scss";
-import { useState } from "react";
-import { useCartContext } from "@/app/context/cart";
 
 interface ProductProps {
   product: ProductType;
@@ -29,7 +33,8 @@ export function Product({ product }: ProductProps) {
 
   const [quantity, setQuantity] = useState(1);
 
-  const { itemsInCart, setItemsInCart } = useCartContext();
+  const { setItemsInCart } = useCartContext();
+  const { handleModal } = useModalContext();
 
   const handleAddProductToCart = () => {
     setItemsInCart((prevItemsInCart) => {
@@ -53,6 +58,11 @@ export function Product({ product }: ProductProps) {
         },
       ];
     });
+
+    setQuantity(1);
+
+    window.scrollTo({ top: 0 });
+    handleModal(<CartModal />);
   };
 
   const handleSubtract = () => {
