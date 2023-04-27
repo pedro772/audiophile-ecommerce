@@ -6,9 +6,15 @@ interface PrimaryButtonProps {
   link?: string;
   name: string;
   type: "primary" | "secondary";
+  handleClick?: (_?: any) => void;
 }
 
-export default function MainButton({ link, name, type }: PrimaryButtonProps) {
+export default function MainButton({
+  link,
+  name,
+  type,
+  handleClick,
+}: PrimaryButtonProps) {
   return link ? (
     <Link href={link}>
       <button
@@ -17,6 +23,7 @@ export default function MainButton({ link, name, type }: PrimaryButtonProps) {
             ? styles["button--primary"]
             : styles["button--secondary"]
         }
+        onClick={handleClick && handleClick}
       >
         {name}
       </button>
@@ -28,6 +35,7 @@ export default function MainButton({ link, name, type }: PrimaryButtonProps) {
           ? styles["button--primary"]
           : styles["button--secondary"]
       }
+      onClick={handleClick && handleClick}
     >
       {name}
     </button>
