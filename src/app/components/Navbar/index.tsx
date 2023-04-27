@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CategoriesModal } from "../Modals/CategoriesModal";
+import { CartModal } from "../Modals/CartModal";
 
 import { useModalContext } from "@/app/context/modal";
 
@@ -70,15 +71,17 @@ export function Navbar({ isOnHomePage }: NavbarProps) {
           </Link>
         </div>
 
-        <Link href="/">
+        <button
+          onClick={() => handleModal(<CartModal />)}
+          className={styles.cart}
+        >
           <Image
             src="/assets/shared/desktop/icon-cart.svg"
             width={23}
             height={20}
             alt="Cart Icon"
-            className={styles.cart}
           />
-        </Link>
+        </button>
       </div>
     </nav>
   );
