@@ -10,7 +10,7 @@ import { CartModal } from "../Modals/CartModal";
 
 import { useCartContext } from "@/app/context/cart";
 import { useModalContext } from "@/app/context/modal";
-import { getResponsiveImagePath } from "@/utils/getResponsiveImagePath";
+import { GetResponsiveImagePath } from "@/utils/GetResponsiveImagePath";
 
 import styles from "./styles.module.scss";
 
@@ -20,14 +20,14 @@ interface ProductProps {
 
 export function Product({ product }: ProductProps) {
   const { innerWidth } = useWindowSize();
-  const mainImageResponsivePath = getResponsiveImagePath(
+  const mainImageResponsivePath = GetResponsiveImagePath(
     product.image.mobile,
     innerWidth
   );
   const galleryResponsivePaths = {
-    first: getResponsiveImagePath(product.gallery.first.mobile, innerWidth),
-    second: getResponsiveImagePath(product.gallery.second.mobile, innerWidth),
-    third: getResponsiveImagePath(product.gallery.third.mobile, innerWidth),
+    first: GetResponsiveImagePath(product.gallery.first.mobile, innerWidth),
+    second: GetResponsiveImagePath(product.gallery.second.mobile, innerWidth),
+    third: GetResponsiveImagePath(product.gallery.third.mobile, innerWidth),
   };
   const productFeatures = product.features.split("\n");
 
@@ -88,6 +88,8 @@ export function Product({ product }: ProductProps) {
             alt="Product Image"
             fill
             style={{ borderRadius: "8px" }}
+            sizes="min-width(768px): 100%, min-width(1200px): 100%, 100%"
+            priority
           />
         </div>
         <div className={styles.product__info}>
@@ -158,6 +160,7 @@ export function Product({ product }: ProductProps) {
             alt="Product Image"
             fill
             style={{ borderRadius: "8px" }}
+            sizes="min-width(768px): 100%, min-width(1200px): 100%, 100%"
           />
         </div>
         <div className={styles["product__gallery--second"]}>
@@ -166,6 +169,7 @@ export function Product({ product }: ProductProps) {
             alt="Product Image"
             fill
             style={{ borderRadius: "8px" }}
+            sizes="min-width(768px): 100%, min-width(1200px): 100%, 100%"
           />
         </div>
         <div className={styles["product__gallery--third"]}>
@@ -174,6 +178,7 @@ export function Product({ product }: ProductProps) {
             alt="Product Image"
             fill
             style={{ borderRadius: "8px" }}
+            sizes="min-width(768px): 100%, min-width(1200px): 100%, 100%"
           />
         </div>
       </section>
@@ -184,7 +189,7 @@ export function Product({ product }: ProductProps) {
         </h3>
         <div className={styles.related__products}>
           {product.others.map((relatedProduct) => {
-            const relatedProductResponsiveImagePath = getResponsiveImagePath(
+            const relatedProductResponsiveImagePath = GetResponsiveImagePath(
               relatedProduct.image.mobile,
               innerWidth
             );
@@ -199,6 +204,7 @@ export function Product({ product }: ProductProps) {
                     alt="Related Product Image"
                     fill
                     style={{ borderRadius: "8px" }}
+                    sizes="min-width(768px): 100%, min-width(1200px): 100%, 100%"
                   />
                 </div>
                 <div className={styles.related__info}>

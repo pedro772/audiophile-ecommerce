@@ -4,7 +4,7 @@ import Image from "next/image";
 import styles from "./styles.module.scss";
 import MainButton from "../Buttons/MainButton";
 import { useWindowSize } from "rooks";
-import { getResponsiveImagePath } from "@/utils/getResponsiveImagePath";
+import { GetResponsiveImagePath } from "@/utils/GetResponsiveImagePath";
 
 interface CategoryProductProps {
   imagePath: string;
@@ -24,7 +24,8 @@ export function CategoryProduct({
   arrayPosition,
 }: CategoryProductProps) {
   const { innerWidth } = useWindowSize();
-  const responsiveImagePath = getResponsiveImagePath(imagePath, innerWidth);
+  const responsiveImagePath = GetResponsiveImagePath(imagePath, innerWidth);
+
   return (
     <div
       className={
@@ -37,6 +38,7 @@ export function CategoryProduct({
           alt="Product Image"
           fill
           style={{ borderRadius: "8px" }}
+          priority
         />
       </div>
       <div className={styles.product__info}>
