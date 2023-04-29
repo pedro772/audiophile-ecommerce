@@ -1,0 +1,85 @@
+@use '../../styles/typography';
+@use '../../styles/screenSizes';
+@use '../../styles/variables';
+
+.summary {
+  &__products {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    margin-bottom: 32px;
+  }
+
+  &__product {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.product {
+  &__info {
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 16px;
+    margin-right: auto;
+  }
+
+  &__name {
+    @include typography.paragraph;
+    font-weight: bold;
+    
+  }
+
+  &__price {
+    @include typography.paragraph;
+    font-size: 14px;
+    font-weight: bold;
+    color: variables.$gray-400;
+  }
+
+  &__quantity {
+    @include typography.paragraph;
+    font-weight: bold;
+    color: variables.$gray-400;
+  }
+}
+
+.prices {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 32px;
+
+  &__detailed {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__expense {
+    @include typography.paragraph;
+    color: variables.$gray-400;
+  }
+
+  &__price {
+    @include typography.header-6;
+    line-height: normal;
+    letter-spacing: normal;
+
+    &--total {
+      @extend .prices__price;
+      color: variables.$primary-color-100;
+    }
+  }
+}
