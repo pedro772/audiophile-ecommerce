@@ -24,6 +24,7 @@ export function CheckoutForm() {
   const {
     register,
     watch,
+    handleSubmit,
     setValue,
     formState: { errors },
   } = useForm<FormInputs>({
@@ -35,8 +36,16 @@ export function CheckoutForm() {
     setValue("paymentMethod", "eMoney");
   }, [setValue]);
 
+  const onSubmit = (data: any) => {
+    console.log(data);
+  };
+
   return (
-    <form id="checkout" className={styles.form__container}>
+    <form
+      id="checkout"
+      onSubmit={handleSubmit(onSubmit)}
+      className={styles.form__container}
+    >
       <fieldset className={styles["fieldset__container--billing"]}>
         <legend className={styles.fieldset__header}>Billing Details</legend>
         <div className={styles.input__container} style={{ gridArea: "name" }}>
