@@ -36,7 +36,7 @@ export function CheckoutForm() {
   }, [setValue]);
 
   return (
-    <form className={styles.form__container}>
+    <form id="checkout" className={styles.form__container}>
       <fieldset className={styles["fieldset__container--billing"]}>
         <legend className={styles.fieldset__header}>Billing Details</legend>
         <div className={styles.input__container} style={{ gridArea: "name" }}>
