@@ -67,3 +67,17 @@
   font-size: 0.9375em;
   line-height: 25px;
 }
+
+@mixin input-label {
+  font-weight: 700;
+  font-size: 0.75em;
+  line-height: normal;
+  letter-spacing: -0.21px;
+}
+
+@mixin input-error {
+  font-weight: 500;
+  font-size: 0.75em;
+  line-height: normal;
+  letter-spacing: -0.21px;
+}

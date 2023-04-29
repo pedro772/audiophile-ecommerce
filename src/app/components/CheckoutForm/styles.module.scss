@@ -1,0 +1,222 @@
+@use '../../styles/typography';
+@use '../../styles/screenSizes';
+@use '../../styles/variables';
+
+.form {
+  &__container {
+    display: flex;
+    flex-direction: column;
+  
+    row-gap: 32px;
+  
+    @include screenSizes.md {
+      row-gap: 54px;
+    }
+  }
+}
+
+.fieldset {
+  &__container {
+    &--billing {
+      display: flex;
+      flex-direction: column;
+      row-gap: 24px;
+
+      @include screenSizes.md {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-areas: 
+        "name email"
+        "phone .";
+        column-gap: 16px;
+        row-gap: 24px;
+      }
+    }
+
+    &--shipping {
+      display: flex;
+      flex-direction: column;
+      row-gap: 24px;
+
+      @include screenSizes.md {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-areas: 
+        "address address"
+        "zip city"
+        "country .";
+        column-gap: 16px;
+        row-gap: 24px;
+      }
+    }
+  }
+
+  &__header {
+    @include typography.sub-title;
+    color: variables.$primary-color-100;
+
+    margin-bottom: 16px;
+  }
+}
+
+.input {
+  height: 56px;
+  padding-inline: 24px;
+
+  border: solid 1px variables.$gray-300;
+  border-radius: 8px;
+  outline: none;
+
+  @include typography.overline;
+  font-weight: bold;
+  letter-spacing: -0.25px;
+  text-transform: none;
+
+  &:focus {
+    border-color: variables.$primary-color-100;
+    caret-color: variables.$primary-color-100;
+  }
+
+  &::placeholder {
+    color: variables.$gray-300;
+  }
+
+  &--error {
+    @extend .input;
+
+    border-color: variables.$error-color-100;
+    caret-color: variables.$error-color-100;
+    border-width: 2px;
+
+    &:focus {
+      @extend .input--error;
+    }
+  }
+
+  &--radio {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 1px solid variables.$gray-300;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+
+    &:checked::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: variables.$primary-color-100;
+    }
+  }
+
+  &__container {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__header {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__label {
+    @include typography.input-label;
+  }
+
+  &__error {
+    @include typography.input-error;
+    color: variables.$error-color-100;
+  }
+}
+
+.checkout {
+  &__radio {
+    height: 56px;
+    padding-inline: 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    border: solid 1px variables.$gray-300;
+    border-radius: 8px;
+    outline: none;
+
+    @include typography.overline;
+    font-weight: bold;
+    line-height: normal;
+    letter-spacing: -0.25px;
+    text-transform: none;
+
+    &:hover {
+      cursor: pointer;
+      border-color: variables.$primary-color-100;
+    }
+
+    &--checked {
+      @extend .checkout__radio;
+      border-color: variables.$primary-color-100;
+    }
+  }
+}
+
+.payment {
+  &__container {
+    &--e-money {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      @include screenSizes.md {
+        flex-direction: row;
+        gap: 16px;
+      }
+    }
+
+    &--cash {
+      display: flex;
+      gap: 32px;
+    }
+  }
+
+  &__methods {
+    margin-bottom: 32px;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+
+    @include screenSizes.md {
+      margin-bottom: 16px;
+
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-template-areas: 
+      "method eMoney"
+      ". cash";
+      column-gap: 8px;
+      row-gap: 16px;
+    }
+  }
+
+  &__method {
+    &--description {
+      @include typography.paragraph;
+      color: variables.$gray-400;
+    }
+  }
+}
