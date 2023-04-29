@@ -6,6 +6,7 @@ import { InputQuantity } from "../../InputQuantity";
 import CheckoutButton from "../../Buttons/CheckoutButton";
 
 import { useCartContext } from "@/app/context/cart";
+import { useModalContext } from "@/app/context/modal";
 
 import { getCartImagePath, getCartProductName } from "@/utils/getCartData";
 
@@ -13,6 +14,7 @@ import styles from "./styles.module.scss";
 import RemoveAllButton from "../../Buttons/RemoveAllButton";
 
 export function CartModal() {
+  const { handleModal } = useModalContext();
   const { itemsInCart, setItemsInCart } = useCartContext();
   let total = 0;
   itemsInCart.forEach((item) => {
@@ -98,7 +100,11 @@ export function CartModal() {
             total
           )}`}</h6>
         </div>
-        <CheckoutButton name="CHECKOUT" />
+        <CheckoutButton
+          link="/checkout"
+          name="CHECKOUT"
+          handleClick={() => handleModal(false)}
+        />
       </div>
     </div>
   );
