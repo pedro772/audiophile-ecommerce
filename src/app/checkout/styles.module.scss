@@ -1,0 +1,85 @@
+@use '../styles/typography';
+@use '../styles/screenSizes';
+@use '../styles/variables';
+
+.container {
+  width: 100%;
+  background-color: #f2f2f2;
+  padding: 0 6.4vw 120px;
+
+  @include screenSizes.md {
+    padding: 0 5vw 96px;
+  }
+
+  @include screenSizes.lg {
+    padding: 0 11vw 200px;
+  }
+}
+
+.checkout-and-summary {
+  width: 100%;
+  margin-top: 24px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  
+  @include screenSizes.lg {
+    margin-top: 38px;
+
+    flex-direction: row;
+    gap: 30px;
+  }
+}
+
+.checkout {
+  &__container {
+    width: 100%;
+    background-color: variables.$white-100;
+    padding: 32px 24px;
+    border-radius: 8px;
+  
+    @include screenSizes.md {
+      padding: 32px 28px;
+    }
+  
+    @include screenSizes.lg {
+      padding: 48px;
+    }
+  }
+
+  &__header {
+    @include typography.header-4;
+    margin-bottom: 32px;
+
+    @include screenSizes.md {
+      @include typography.header-3;
+      margin-bottom: 42px;
+    }
+  }
+}
+
+.summary {
+  &__container {
+    width: 100%;
+    height: fit-content;
+    background-color: variables.$white-100;
+    padding: 32px 24px;
+    border-radius: 8px;
+  
+    @include screenSizes.md {
+      padding: 32px 28px;
+    }
+  
+    @include screenSizes.lg {
+      min-width: 350px;
+      max-width: 350px;
+      padding: 32px;
+    }
+  }
+
+  &__header {
+    @include typography.header-6;
+    margin-bottom: 32px;
+  }
+}
