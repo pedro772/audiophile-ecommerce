@@ -16,7 +16,7 @@ import styles from "./styles.module.scss";
 
 export function OrderModal() {
   const { handleModal } = useModalContext();
-  const { itemsInCart } = useCartContext();
+  const { itemsInCart, setItemsInCart } = useCartContext();
   const [showAllItems, setShowAllItems] = useState(false);
 
   let total = 0;
@@ -24,6 +24,11 @@ export function OrderModal() {
     total += item.product.price * item.quantity * 1.2;
   });
   const firstItemInCart = itemsInCart[0];
+
+  const handleGoHome = () => {
+    handleModal(false);
+    setItemsInCart([]);
+  };
 
   return (
     <div className={styles.modal__container}>
@@ -143,7 +148,7 @@ export function OrderModal() {
         <CheckoutButton
           link="/"
           name="BACK TO HOME"
-          handleClick={() => handleModal(false)}
+          handleClick={handleGoHome}
         />
       </div>
     </div>
