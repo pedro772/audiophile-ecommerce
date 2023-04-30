@@ -4,6 +4,9 @@ import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 
 import Image from "next/image";
+import { OrderModal } from "../Modals/OrderModal";
+
+import { useModalContext } from "@/app/context/modal";
 
 import styles from "./styles.module.scss";
 
@@ -21,6 +24,8 @@ interface FormInputs {
 }
 
 export function CheckoutForm() {
+  const { handleModal } = useModalContext();
+
   const {
     register,
     watch,
@@ -36,8 +41,9 @@ export function CheckoutForm() {
     setValue("paymentMethod", "eMoney");
   }, [setValue]);
 
-  const onSubmit = (data: any) => {
-    console.log(data);
+  const onSubmit = () => {
+    window.scrollTo({ top: 0 });
+    handleModal(<OrderModal />);
   };
 
   return (
