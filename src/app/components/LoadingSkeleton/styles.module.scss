@@ -28,7 +28,7 @@
 
     &--left {
       @extend .navbar__item;
-      width: 5vw;
+      width: 30px;
     }
 
     &--center {
@@ -38,8 +38,13 @@
 
     &--right {
       @extend .navbar__item;
-      width: 5vw;
+      width: 30px;
     }
+  }
+
+  &--product {
+    @extend .navbar;
+    background-color: variables.$black-200;
   }
 }
 
@@ -68,6 +73,120 @@
     background-color: variables.$gray-600;
     width: 35vw;
     height: 60vh;
+    animation: skeleton-loading 1s linear infinite alternate;
+  }
+}
+
+.category {
+  width: 100vw;
+  height: 240px;
+
+  background-color: variables.$black-200;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__item {
+    background-color: variables.$gray-600;
+    width: 250px;
+    height: 30px;
+    animation: skeleton-loading 1s linear infinite alternate;
+  }
+}
+
+.product {
+  width: 100%;
+  height: fit-content;
+  padding-top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  &__image {
+    background-color: variables.$gray-300;
+    width: 35vw;
+    height: 40vh;
+    animation: skeleton-loading 1s linear infinite alternate;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__name {
+    background-color: variables.$gray-300;
+    width: 20vw;
+    height: 40px;
+    animation: skeleton-loading 1s linear infinite alternate;
+  }
+
+  &__description {
+    background-color: variables.$gray-300;
+    width: 40vw;
+    height: 60px;
+    animation: skeleton-loading 1s linear infinite alternate;
+  }
+
+  &__price {
+    background-color: variables.$gray-300;
+    width: 10vw;
+    height: 20px;
+    animation: skeleton-loading 1s linear infinite alternate;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__button {
+    background-color: variables.$gray-300;
+    width: 15vw;
+    height: 45px;
+    animation: skeleton-loading 1s linear infinite alternate;
+  }
+}
+
+.checkout {
+  &__page {
+    background-color: #F2F2F2;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__form {
+    margin: 40px 6.4vw;
+    padding: 32px;
+    background-color: variables.$white-100;
+    max-width: 100%;
+    max-height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px
+  }
+
+  &__title {
+    background-color: variables.$gray-300;
+    width: 15vw;
+    height: 30px;
+    animation: skeleton-loading 1s linear infinite alternate;
+  }
+
+  &__section {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__field {
+    background-color: variables.$gray-300;
+    width: 100%;
+    height: 45px;
     animation: skeleton-loading 1s linear infinite alternate;
   }
 }

@@ -37,7 +37,7 @@ export function HomeSkeleton() {
 export function CategorySkeleton() {
   return (
     <div className={styles.container}>
-      <div className={styles.navbar}>
+      <div className={styles["navbar--product"]}>
         <div className={styles["navbar__item--left"]} />
         <div className={styles["navbar__item--center"]} />
         <div className={styles["navbar__item--right"]} />
@@ -47,9 +47,9 @@ export function CategorySkeleton() {
         <div className={styles.category__item} />
       </div>
 
-      <div className={styles.category__product}>
-        <div className={styles.product}>
-          <div className={styles.product__image} />
+      <div className={styles.product}>
+        <div className={styles.product__image} />
+        <div className={styles.product__info}>
           <div className={styles.product__name} />
           <div className={styles.product__description} />
           <div className={styles.product__button} />
@@ -62,7 +62,7 @@ export function CategorySkeleton() {
 export function ProductSkeleton() {
   return (
     <div className={styles.container}>
-      <div className={styles.navbar}>
+      <div className={styles["navbar--product"]}>
         <div className={styles["navbar__item--left"]} />
         <div className={styles["navbar__item--center"]} />
         <div className={styles["navbar__item--right"]} />
@@ -71,12 +71,55 @@ export function ProductSkeleton() {
       <div className={styles.product__container}>
         <div className={styles.product}>
           <div className={styles.product__image} />
-          <div className={styles.product__name} />
-          <div className={styles.product__description} />
-          <div className={styles.product__price} />
-          <div className={styles.product__buttons}>
-            <div className={styles.product__button} />
-            <div className={styles.product__button} />
+          <div className={styles.product__info}>
+            <div className={styles.product__name} />
+            <div className={styles.product__description} />
+            <div className={styles.product__price} />
+            <div className={styles.product__buttons}>
+              <div className={styles.product__button} />
+              <div className={styles.product__button} />
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.product}>
+          <div className={styles.product__image} />
+          <div className={styles.product__info}>
+            <div className={styles.product__name} />
+            <div className={styles.product__description} />
+            <div className={styles.product__price} />
+            <div className={styles.product__buttons}>
+              <div className={styles.product__button} />
+              <div className={styles.product__button} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function CheckoutSkeleton() {
+  return (
+    <div className={styles.container}>
+      <div className={styles["navbar--product"]}>
+        <div className={styles["navbar__item--left"]} />
+        <div className={styles["navbar__item--center"]} />
+        <div className={styles["navbar__item--right"]} />
+      </div>
+
+      <div className={styles.checkout__page}>
+        <div className={styles.checkout__form}>
+          <div className={styles.checkout__title} />
+          <div className={styles.checkout__section}>
+            <div className={styles.checkout__field} />
+            <div className={styles.checkout__field} />
+            <div className={styles.checkout__field} />
+          </div>
+          <div className={styles.checkout__section}>
+            <div className={styles.checkout__field} />
+            <div className={styles.checkout__field} />
+            <div className={styles.checkout__field} />
           </div>
         </div>
       </div>
