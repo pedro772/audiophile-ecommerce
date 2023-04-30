@@ -32,7 +32,7 @@
   &__name {
     @include typography.paragraph;
     font-weight: bold;
-    
+    color: variables.$black-200;
   }
 
   &__price {
