@@ -132,6 +132,7 @@
   &__name {
     @include typography.paragraph;
     font-weight: bold;
+    color: variables.$black-200;
   }
 
   &__price {
@@ -181,91 +182,5 @@
     line-height: normal;
     letter-spacing: 0;
     color: variables.$white-100;
-  }
-}
-
-.cart-modal {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  &__header {
-    @include typography.header-6;
-    line-height: normal;
-    letter-spacing: 0;
-
-    color: variables.$black-100;
-  }
-
-  &__container {
-    display: flex;
-
-    &--header {
-      @extend .cart-modal__container;
-      width: 100%;
-      align-items: center;
-      justify-content: space-between;
-
-      margin-bottom: 32px;
-    }
-
-    &--items {
-      @extend .cart-modal__container;
-      width: 100%;
-      flex-direction: column;
-      gap: 24px;
-
-      max-height: calc(100vh - 186px - 90px - 48px - 80px);
-      overflow-y: auto;
-
-      margin-bottom: 32px;
-    }
-
-    &--item {
-      @extend .cart-modal__container;
-      width: 100%;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    &--prices {
-      @extend .cart-modal__container;
-      width: 100%;
-      align-items: center;
-      justify-content: space-between;
-      
-      margin-bottom: 24px;
-    }
-
-    &--product-info {
-      @extend .cart-modal__container;
-      flex-direction: column;
-      
-      margin-left: 16px;
-      margin-right: auto;
-    }
-  }
-
-  &__product {
-    &--name {
-      @include typography.paragraph;
-      font-weight: bold;
-      
-    }
-
-    &--price {
-      @include typography.paragraph;
-      font-size: 14px;
-      font-weight: bold;
-      color: variables.$gray-400;
-    }
-  }
-
-  &__prices {
-    &--total {
-      @include typography.paragraph;
-      color: variables.$gray-400;
-    }
   }
 }
