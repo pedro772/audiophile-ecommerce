@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
 import styles from "./styles.module.scss";
 import MainButton from "../Buttons/MainButton";
@@ -33,13 +34,15 @@ export function CategoryProduct({
       }
     >
       <div className={styles.product__image}>
-        <Image
-          src={responsiveImagePath}
-          alt="Product Image"
-          fill
-          style={{ borderRadius: "8px" }}
-          priority
-        />
+        <Link href={`product/${slug}`}>
+          <Image
+            src={responsiveImagePath}
+            alt="Product Image"
+            fill
+            style={{ borderRadius: "8px" }}
+            priority
+          />
+        </Link>
       </div>
       <div className={styles.product__info}>
         {isNewProduct && (

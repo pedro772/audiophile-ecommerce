@@ -2,7 +2,9 @@
 
 import { useState } from "react";
 import { useWindowSize } from "rooks";
+
 import Image from "next/image";
+import Link from "next/link";
 
 import MainButton from "../Buttons/MainButton";
 import { InputQuantity } from "../InputQuantity";
@@ -199,13 +201,15 @@ export function Product({ product }: ProductProps) {
                 className={styles.related__product}
               >
                 <div className={styles.related__image}>
-                  <Image
-                    src={relatedProductResponsiveImagePath}
-                    alt="Related Product Image"
-                    fill
-                    style={{ borderRadius: "8px" }}
-                    sizes="min-width(768px): 100%, min-width(1200px): 100%, 100%"
-                  />
+                  <Link href={`product/${relatedProduct.slug}`}>
+                    <Image
+                      src={relatedProductResponsiveImagePath}
+                      alt="Related Product Image"
+                      fill
+                      style={{ borderRadius: "8px" }}
+                      sizes="min-width(768px): 100%, min-width(1200px): 100%, 100%"
+                    />
+                  </Link>
                 </div>
                 <div className={styles.related__info}>
                   <h4 className={styles.related__name}>

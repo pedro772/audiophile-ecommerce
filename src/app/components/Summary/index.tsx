@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 import { useCartContext } from "@/app/context/cart";
 import { getCartImagePath, getCartProductName } from "@/utils/getCartData";
@@ -20,16 +21,22 @@ export function Summary() {
       <div className={styles.summary__products}>
         {itemsInCart.map((item) => (
           <div key={item.product.id} className={styles.summary__product}>
-            <Image
-              src={getCartImagePath(item.product)}
-              alt=""
-              width={64}
-              height={64}
-            />
+            <Link href={`/product/${item.product.slug}`}>
+              <Image
+                src={getCartImagePath(item.product)}
+                alt=""
+                width={64}
+                height={64}
+              />
+            </Link>
+
             <div className={styles.product__info}>
-              <p className={styles.product__name}>
-                {getCartProductName(item.product)}
-              </p>
+              <Link href={`/product/${item.product.slug}`}>
+                <p className={styles.product__name}>
+                  {getCartProductName(item.product)}
+                </p>
+              </Link>
+
               <p
                 className={styles.product__price}
               >{`$ ${item.product.price}`}</p>

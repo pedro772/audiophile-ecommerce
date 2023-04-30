@@ -1,7 +1,9 @@
 "use client";
 
-import { EmptyCart } from "./EmptyCart";
 import Image from "next/image";
+import Link from "next/link";
+
+import { EmptyCart } from "./EmptyCart";
 import { InputQuantity } from "../../InputQuantity";
 import CheckoutButton from "../../Buttons/CheckoutButton";
 
@@ -70,17 +72,29 @@ export function CartModal() {
               key={item.product.id}
               className={styles["cart-modal__container--item"]}
             >
-              <Image
-                src={getCartImagePath(item.product)}
-                alt=""
-                width={64}
-                height={64}
-                className={styles["cart-modal__product--image"]}
-              />
+              <Link
+                href={`/product/${item.product.slug}`}
+                onClick={() => handleModal(false)}
+              >
+                <Image
+                  src={getCartImagePath(item.product)}
+                  alt=""
+                  width={64}
+                  height={64}
+                  className={styles["cart-modal__product--image"]}
+                />
+              </Link>
+
               <div className={styles["cart-modal__container--product-info"]}>
-                <p className={styles["cart-modal__product--name"]}>
-                  {getCartProductName(item.product)}
-                </p>
+                <Link
+                  href={`/product/${item.product.slug}`}
+                  onClick={() => handleModal(false)}
+                >
+                  <p className={styles["cart-modal__product--name"]}>
+                    {getCartProductName(item.product)}
+                  </p>
+                </Link>
+
                 <p
                   className={styles["cart-modal__product--price"]}
                 >{`$ ${item.product.price}`}</p>

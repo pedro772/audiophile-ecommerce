@@ -2,7 +2,9 @@
 
 import { useState } from "react";
 
+import Link from "next/link";
 import Image from "next/image";
+
 import CheckoutButton from "../../Buttons/CheckoutButton";
 
 import { useCartContext } from "@/app/context/cart";
@@ -16,10 +18,12 @@ export function OrderModal() {
   const { handleModal } = useModalContext();
   const { itemsInCart } = useCartContext();
   const [showAllItems, setShowAllItems] = useState(false);
+
   let total = 0;
   itemsInCart.forEach((item) => {
     total += item.product.price * item.quantity * 1.2;
   });
+  const firstItemInCart = itemsInCart[0];
 
   return (
     <div className={styles.modal__container}>
@@ -48,16 +52,28 @@ export function OrderModal() {
                   return (
                     <>
                       <div className={styles.checkout__product}>
-                        <Image
-                          src={getCartImagePath(item.product)}
-                          alt=""
-                          width={32}
-                          height={32}
-                        />
+                        <Link
+                          onClick={() => handleModal(false)}
+                          href={`/product/${item.product.slug}`}
+                        >
+                          <Image
+                            src={getCartImagePath(item.product)}
+                            alt=""
+                            width={50}
+                            height={50}
+                          />
+                        </Link>
+
                         <div className={styles.product__info}>
-                          <p className={styles.product__name}>
-                            {getCartProductName(item.product)}
-                          </p>
+                          <Link
+                            onClick={() => handleModal(false)}
+                            href={`/product/${item.product.slug}`}
+                          >
+                            <p className={styles.product__name}>
+                              {getCartProductName(item.product)}
+                            </p>
+                          </Link>
+
                           <p
                             className={styles.product__price}
                           >{`$ ${item.product.price}`}</p>
@@ -79,23 +95,34 @@ export function OrderModal() {
             ) : (
               <>
                 <div className={styles.checkout__product}>
-                  <Image
-                    src={getCartImagePath(itemsInCart[0].product)}
-                    alt=""
-                    width={32}
-                    height={32}
-                  />
+                  <Link
+                    onClick={() => handleModal(false)}
+                    href={`/product/${firstItemInCart.product.slug}`}
+                  >
+                    <Image
+                      src={getCartImagePath(firstItemInCart.product)}
+                      alt=""
+                      width={50}
+                      height={50}
+                    />
+                  </Link>
+
                   <div className={styles.product__info}>
-                    <p className={styles.product__name}>
-                      {getCartProductName(itemsInCart[0].product)}
-                    </p>
+                    <Link
+                      onClick={() => handleModal(false)}
+                      href={`/product/${firstItemInCart.product.slug}`}
+                    >
+                      <p className={styles.product__name}>
+                        {getCartProductName(firstItemInCart.product)}
+                      </p>
+                    </Link>
                     <p
                       className={styles.product__price}
-                    >{`$ ${itemsInCart[0].product.price}`}</p>
+                    >{`$ ${firstItemInCart.product.price}`}</p>
                   </div>
                   <p
                     className={styles.product__quantity}
-                  >{`x${itemsInCart[0].quantity}`}</p>
+                  >{`x${firstItemInCart.quantity}`}</p>
                 </div>
                 {itemsInCart.length > 1 && (
                   <button
