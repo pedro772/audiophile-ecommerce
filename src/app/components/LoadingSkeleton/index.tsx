@@ -36,7 +36,7 @@ export function HomeSkeleton() {
 
 export function CategorySkeleton() {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} style={{ marginTop: "90px" }}>
       <div className={styles.category}>
         <div className={styles.category__item} />
       </div>
@@ -55,7 +55,7 @@ export function CategorySkeleton() {
 
 export function ProductSkeleton() {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} style={{ marginTop: "90px" }}>
       <div className={styles.product__container}>
         <div className={styles.product}>
           <div className={styles.product__image} />
@@ -89,7 +89,7 @@ export function ProductSkeleton() {
 
 export function CheckoutSkeleton() {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} style={{ marginTop: "90px" }}>
       <div className={styles.checkout__page}>
         <div className={styles.checkout__form}>
           <div className={styles.checkout__title} />
