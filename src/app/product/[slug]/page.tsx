@@ -1,3 +1,5 @@
+import ScrollUp from "@/app/components/ScrollUp";
+
 import { getData } from "@/app/api/data/getData";
 import { AboutUs } from "@/app/components/AboutUs";
 import { Categories } from "@/app/components/Categories";
@@ -24,6 +26,7 @@ export default async function ProductPage({
         <Categories />
         <AboutUs />
       </main>
+      <ScrollUp />
     </>
   );
 }
