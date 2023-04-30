@@ -1,4 +1,3 @@
-import { ShowData } from "./components/ShowData";
 import { getData } from "./api/data/getData";
 import { Homepage } from "./components/Homepage";
 import ScrollUp from "./components/ScrollUp";
