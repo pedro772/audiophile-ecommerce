@@ -65,7 +65,6 @@ export default function RootLayout({
         />
       </head>
 
-      {/* margin-top to offset navbar */}
       <body className={manrope.className} style={{ maxWidth: "100vw" }}>
         <CartContextProvider>
           <ModalContextProvider>{children}</ModalContextProvider>
