@@ -4,21 +4,23 @@
 
 .header {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
 
   width: 100%;
-  height: 100vh;
+  height: 160vw;
   margin-top: -90px;
 
   background-size: 100% 100%;
   background-image: url('../../../../public/assets/home/mobile/image-header.jpg');
 
   @include screenSizes.md {
+    height: 95vw;
     background-image: url('../../../../public/assets/home/tablet/image-header.jpg');
   }
 
   @include screenSizes.lg {
+    height: 50vw;
     justify-content: flex-start;
     background-image: url('../../../../public/assets/home/desktop/image-hero.jpg');
   }
@@ -30,10 +32,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 30vw;
+
+  @include screenSizes.md {
+    margin-bottom: 21vw;
+  }
 
   @include screenSizes.lg {
     align-items: flex-start;
     margin-inline: 11vw;
+    margin-bottom: 11vw;
+    
   }
 }
 
