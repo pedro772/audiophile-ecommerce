@@ -1,4 +1,4 @@
-# Audiophile E-Commerce Webstie - Frontend Mentor challenge
+# Audiophile E-Commerce Website - Frontend Mentor challenge
 
 * Access the production version hosted at Vercel [here](https://audiophile-ecommerce-alpha.vercel.app/)
 
