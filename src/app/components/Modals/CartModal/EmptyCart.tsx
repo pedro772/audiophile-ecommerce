@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import MainButton from "../../Buttons/MainButton";
+import CheckoutButton from "../../Buttons/CheckoutButton";
 import { useModalContext } from "@/app/context/modal";
 
 import styles from "./styles.module.scss";
@@ -18,10 +18,9 @@ export function EmptyCart() {
         height={175}
       />
       <h6 className={styles["cart-modal__header"]}>YOUR CART IS EMPTY</h6>
-      <MainButton
+      <CheckoutButton
         handleClick={() => handleModal(false)}
         name="CONTINUE SHOPPING"
-        type="primary"
       />
     </div>
   );
