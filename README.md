@@ -1,4 +1,4 @@
-# Audiophile E-Commerce Webstie - Frontend Mentor challenge
+# Audiophile E-Commerce Website - Frontend Mentor challenge
 
 * Access the production version hosted at Vercel [here](https://audiophile-ecommerce-alpha.vercel.app/)
 
@@ -13,8 +13,8 @@
 * Context API
 * React Hook Form
 
-### Home Screen!
-![image](https://user-images.githubusercontent.com/50212896/235716321-2b301f6c-841a-40c8-9cc3-589d36530376.png)
+### Home Screen
+![image](https://user-images.githubusercontent.com/50212896/236105647-b60dc189-6aec-4b1e-8228-b91269e01336.png)
 
 ### Category Screen
 ![image](https://user-images.githubusercontent.com/50212896/235569373-68b99c91-90ad-4896-bf00-0986772305c0.png)
